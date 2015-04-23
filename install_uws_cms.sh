@@ -59,10 +59,10 @@ EOF
 # checkout code to home/uws/uws_cms
 cat <<EOF> /home/$OS_USERNAME/$APP_NAME/$APP_NAME/views.py
 from django.http import HttpResponse
+import datetime
 
 def hello(request):
-    return HttpResponse("<html>Hello world</html>")
-
+    return HttpResponse("<html>Current Time is " + datetime.datetime.now().isoformat('T') +"</html>" )
 EOF
 
 rm /home/$OS_USERNAME/$APP_NAME/$APP_NAME/urls.py
