@@ -93,3 +93,4 @@ chown -R $OS_USERNAME /home/$OS_USERNAME
 chgrp -R $OS_USERNAME /home/$OS_USERNAME
 chmod -R 755 /home/$OS_USERNAME/$APP_NAME
 
+service httpd start
