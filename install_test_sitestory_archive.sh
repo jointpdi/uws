@@ -71,26 +71,9 @@ def hello(request):
         timegate_url = ''.join(('http://', sitestory_archive_host, timegate_path, '/http://', cms_host, request.path))
         try:
             response = urllib2.urlopen(timegate_url)
+            return HttpResponse(response.read())
         except urllib2.HTTPError, e:
             return HttpResponseNotFound('Page not found 1')
-        links = response.info().getheader('Link').split(', <')
-        last_memento_link = ''
-        link_seg_dic = {}
-        link_seg_dic['memento last'] = False
-        for link in links:
-            link_segs = link.split(';')
-            for link_seg in link_segs:
-                if '=' not in link_seg:
-                    link_seg_dic['value'] = link_seg.split('>')[0]
-                elif 'memento last' in link_seg:
-                    link_seg_dic['memento last'] = True
-            if link_seg_dic['memento last']:
-                last_memento_link = link_seg_dic['value']
-                break
-        if last_memento_link:
-            return HttpResponse(urllib2.urlopen(last_memento_link).read())
-        else:
-            return HttpResponseNotFound('Page not found 2')
 EOF
 
 rm /home/$OS_USERNAME/$APP_NAME/$APP_NAME/urls.py
