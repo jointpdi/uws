@@ -21,3 +21,6 @@ ln -s /usr/local/bin/httperf /bin/httperf
 #sudo yum --nogpgcheck -y install ./httperf-0.9.0-1.el6.rf.x86_64.rpm
 wget https://atyu30.googlecode.com/files/autobench-2.1.2-1.el6.x86_64.rpm
 yum --nogpgcheck -y install ./autobench-2.1.2-1.el6.x86_64.rpm
+for i in {1..100000}; do echo /$i/ >>urls.log; done
+tr "\n" "\0" < urls.log > wlog.log
+
