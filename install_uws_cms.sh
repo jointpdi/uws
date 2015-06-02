@@ -1087,7 +1087,7 @@ tuoihbkvojwbdfgkpmpfpoooozegzdzjbszmrosruzuflbidegnxmunvvcvtihorgputhnzdlwvhbyrt
 pqnodpwkzvvntsmhydyyeimxnedshvqnhbehpjomtmqshwytsechbmteqyccshrxzflgtmtuecqdurlfihnurlvpydukokiasfic
 gxxfedpjvwoshkaccjahekgygmsypnheluoyfyxtlgkipqbifrocwdfypdpqfnuanhwpcppcrxvdahmrnpnqhvuahipayxufeemz
 """
-    return HttpResponse("<html><p>Current Time is " + datetime.datetime.now().isoformat('T') +"</p><p>' + text + '</p></html>" )
+    return HttpResponse("<html><p>Current Time is " + datetime.datetime.now().isoformat('T') +"</p><p>" + text + "</p></html>" )
     ###
     if randint(0,1):
         return HttpResponse("<html>Current Time is " + datetime.datetime.now().isoformat('T') +"</html>" )
