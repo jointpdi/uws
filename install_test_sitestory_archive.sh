@@ -65,7 +65,7 @@ sitestory_archive_host = '10.147.151.224:8080'
 timegate_path = '/sitestory/timegate'
 cms_host = '10.152.137.110'
 
-def hello(request):
+def hello(request, num='1'):
     if request.method == 'GET':
         #cms_host = request.META['HTTP_HOST']
         timegate_url = ''.join(('http://', sitestory_archive_host, timegate_path, '/http://', cms_host, request.path))
@@ -87,7 +87,8 @@ from uws_cms.views import hello
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', hello),
+    #url(r'^$', hello),
+    url(r'^(?P<num>[0-9]+)/$', hello),
     # Examples:
     # url(r'^/$', 'uws_cms.views.home', name='home'),
     # url(r'^uws_cms/', include('uws_cms.foo.urls')),
