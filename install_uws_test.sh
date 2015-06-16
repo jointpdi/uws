@@ -17,7 +17,7 @@ yum -y update
 #make
 #make install
 #ln -s /usr/local/bin/httperf /bin/httperf
-wget ftp://fr2.rpmfind.net/linux/dag/redhat/el6/en/x86_64/dag/RPMS/httperf-0.9.0-1.el6.rf.x86_64.rpm
+# wget ftp://fr2.rpmfind.net/linux/dag/redhat/el6/en/x86_64/dag/RPMS/httperf-0.9.0-1.el6.rf.x86_64.rpm
 wget https://drive.google.com/file/d/0B4wQsyDtMAN-NGNpczNVNXBOa3M/view?usp=sharing -o httperf-0.9.0-1p1.el6.x86_64.rpm
 sudo yum --nogpgcheck -y install ./httperf-0.9.0-1p1.el6.x86_64.rpm
 wget https://atyu30.googlecode.com/files/autobench-2.1.2-1.el6.x86_64.rpm
